@@ -1,0 +1,18 @@
+SITO SBANDIERATORI E MUSICI DELLO STATO DI DIANO
+
+index.html   contenuti e struttura
+css/style.css  colori (in alto, sezione :root) e grafica
+js/main.js   anni, uscite e animazioni (in alto: FIRST, LAST, SKIP_YEARS, PHOTOS, EVENTS)
+foto/        una cartella per anno (2014, 2015, ...) e foto/trasferte/
+             per le foto delle uscite (vedi il commento in cima a main.js)
+immagini/    logo, scudi, bandiera (originali in alta risoluzione)
+immagini/web/  versioni compresse degli stessi file, usate dal sito (index.html
+             punta sempre a queste; se sostituite un'immagine, rifate anche
+             la versione compressa qui dentro, altrimenti il sito carica
+             file da decine di MB)
+
+Sezione Instagram (in index.html, cercare "SEGNAPOSTO" vicino a id="instagram"):
+ogni volta che pubblicate un nuovo post, sostituite il link nell'attributo
+data-instgrm-permalink con l'indirizzo del post nuovo (es. https://www.instagram.com/p/CODICE_POST/).
+Anche i link "Seguici su Instagram" e la voce Instagram nei Contatti puntano
+al profilo: sostituire https://www.instagram.com/ con l'indirizzo del vostro profilo.
