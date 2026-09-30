@@ -36,6 +36,12 @@ section>.wrap>header{display:flex;flex-direction:column;gap:10px;margin-bottom:3
 section h2{font-size:clamp(30px,4.6vw,44px)}
 .lead{max-width:62ch;color:var(--muted);margin:0}
 
+.motto{width:fit-content;max-width:100%;margin:0 auto 32px;border:1px solid var(--gold);border-radius:14px;background:color-mix(in srgb,var(--gold) 10%,transparent)}
+.motto summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;font:italic 600 19px/1 var(--body);letter-spacing:.05em;color:var(--ink)}
+.motto summary::-webkit-details-marker{display:none}
+.motto summary::before,.motto summary::after{content:"";width:20px;height:1px;background:var(--gold);flex:none}
+.motto p{margin:0;padding:0 20px 18px;max-width:56ch;color:var(--muted);font-size:15px;text-align:center}
+
 nav{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:space-between;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
 nav .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:26px;text-decoration:none}
 nav .brand svg{width:72px;height:86px;color:var(--brand)}
@@ -125,10 +131,11 @@ footer svg{width:26px;height:31px;color:var(--brand)}
 dialog{border:0;padding:0;background:transparent;max-width:min(94vw,1100px);width:100%;color:#fff;overflow:visible}
 dialog::backdrop{background:rgba(8,10,16,.88)}
 .lb{display:grid;gap:12px;justify-items:center}
-.lb .stage{width:100%;aspect-ratio:3/2;max-height:78vh;background:repeating-linear-gradient(135deg,#252c3e 0 14px,#2b3348 14px 28px);display:grid;place-items:center;position:relative}
-.lb .stage img{max-width:100%;max-height:78vh;object-fit:contain}
+.lb .stage{max-height:78vh;display:grid;place-items:center;position:relative}
+.lb .stage:not(.has-img){width:100%;aspect-ratio:3/2;background:repeating-linear-gradient(135deg,#252c3e 0 14px,#2b3348 14px 28px)}
+.lb .stage.has-img img{display:block;width:auto;height:auto;max-width:min(94vw,1100px);max-height:78vh}
 .lb .stage b{font-family:var(--display);font-weight:400;font-size:clamp(28px,6vw,56px);opacity:.8}
-.lb .bar{display:flex;gap:10px;align-items:center;justify-content:space-between;width:100%;font-size:14px}
+.lb .bar{display:flex;gap:10px;align-items:center;justify-content:space-between;width:100%;min-width:280px;font-size:14px}
 .lb button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);padding:9px 16px;cursor:pointer}
 .lb button:hover{background:rgba(255,255,255,.24)}
 

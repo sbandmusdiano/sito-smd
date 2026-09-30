@@ -113,7 +113,7 @@ function flagSVG(id, amp, pole, dur){
   return '<svg viewBox="'+vb+'" aria-hidden="true">'+
     '<defs><clipPath id="c'+id+'"><path d="'+wavePath(a)+'">'+anim+'</path></clipPath>'+
     '<linearGradient id="g'+id+'" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset=".3" stop-color="#fff" stop-opacity=".18"/><stop offset=".6" stop-color="#000" stop-opacity=".2"/><stop offset="1" stop-color="#fff" stop-opacity=".12"/>'+shade+'</linearGradient></defs>'+
-    (pole ? '<rect x="-6" y="-4" width="8" height="300" rx="3" fill="#161616"/><circle cx="-2" cy="-6" r="7" fill="#161616"/>' : '')+
+    (pole ? '<rect x="-6" y="-4" width="8" height="300" rx="3" fill="#fefefe"/><circle cx="-2" cy="-6" r="7" fill="#fefefe"/>' : '')+
     '<g clip-path="url(#c'+id+')">'+clothStrips(id, a, dur)+'<rect width="200" height="220" y="-10" fill="url(#g'+id+')"/></g></svg>';
 }
 var cart = document.getElementById('cart');
@@ -137,6 +137,7 @@ var dlg = document.getElementById('lb'), stage = document.getElementById('lbStag
 var cur = [], idx = 0;
 function show(){
   var b = cur[idx]; stage.innerHTML = '';
+  stage.classList.toggle('has-img', !!b.dataset.full);
   if (b.dataset.full){ var im = new Image(); im.src = b.dataset.full; im.alt = b.dataset.label; stage.appendChild(im); }
   else { var s = document.createElement('b'); s.textContent = b.dataset.label; stage.appendChild(s); }
   cap.textContent = (idx + 1) + ' / ' + cur.length;
